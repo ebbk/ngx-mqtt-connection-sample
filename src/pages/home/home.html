@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Disconnect / Connect
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-item>
+      <h2>Ticks</h2>
+      <p>{{ticks}}</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <h2>Last sent message</h2>
+      <p>{{lastSentMessage}}</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <h2>Last received message</h2>
+      <p>{{lastMessage}}</p>
+    </ion-item>
+  </ion-card>
+
+  <button ion-button color='secondary' (click)='connect()' *ngIf='(_mqttService.state | async) != 2'>connect</button>
+  <button ion-button color='danger' (click)='disconnect()' *ngIf='(_mqttService.state | async) == 2'>disconnect</button>
+</ion-content>
