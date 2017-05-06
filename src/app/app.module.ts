@@ -11,7 +11,7 @@ import { MqttService, MqttModule } from "ngx-mqtt";
 
 export const MQTT_SERVICE_OPTIONS = {
   connectOnCreate: false,
-  hostname: '52.14.215.139',
+  hostname: 'localhost',
   port: 1884,
   protocol: 'ws',
 };
